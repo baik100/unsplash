@@ -1,0 +1,49 @@
+//common
+
+.container {
+  width: 1400px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+
+//search box
+
+.search-box {
+  label {
+
+  }
+  .round  {
+    flex-grow: 1;
+    height: 40px;
+    line-height: 40px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: #eee;
+    border: 1px solid #f3f3f3;
+    padding-left: 40px;
+    min-width: 780px;
+    font-size: 14px;
+    &:focus {
+      outline: none;
+      background: #fff;
+      border: 1px solid #ddd;
+    }
+  }
+
+  .square {
+    height: 54px;
+    line-height: 54px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: #fff;
+    border: none;
+    min-width: 870px;
+    padding-left: 34px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
