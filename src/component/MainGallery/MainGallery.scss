@@ -1,0 +1,67 @@
+@import "../../scss/helper/mixin";
+
+//Main Gallery
+
+.MainGallery {
+  padding-top: 38px;
+  .MainGalleryItem {
+    width: 33.33%;
+    padding: 12px;
+
+    @include screen-md {
+      width: 33.33%;
+    }
+    @include screen-sm {
+      width: 50%;
+    }
+    @include screen-xs {
+      width: 100%;
+    }
+    .inner {
+      position: relative;
+      cursor: zoom-in;
+      &:hover {
+        &:before {
+          content:'';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.25);
+          z-index: 1;
+        }
+        .desc, .item-collect, .item-download {
+          opacity: 1;
+        }
+      }
+    }
+    .thumb {
+
+    }
+    .desc {
+      opacity: 0;
+      @include transition(0.4);
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      z-index: 10;
+    }
+    .item-collect {
+      opacity: 0;
+      @include transition(0.4);
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 10;
+    }
+    .item-download {
+      opacity: 0;
+      @include transition(0.4);
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      z-index: 10;
+    }
+  }
+}

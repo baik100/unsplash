@@ -4,7 +4,7 @@
 
   .visual {
     background: #000 url('https://images.unsplash.com/photo-1550936273-24fe2f09fcca?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;dpr=1&amp;auto=format&amp;fit=crop&amp;w=4999&amp;h=594&amp;q=80&amp;ch=dpr') 50%/cover no-repeat;
-    height: 70vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,9 +39,13 @@
       }
       .recomm-words {
         color: #fff;
-        font-size: 15px;
+        font-sizeh: 15px;
         margin-top: 16px;
       }
     }
+  }
+  .container-m-gallery {
+    width: 1290px;
+    margin: 0 auto;
   }
 }
