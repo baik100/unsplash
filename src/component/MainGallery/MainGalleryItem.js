@@ -46,8 +46,13 @@ class MainGalleryItem extends Component {
                         <span className="download">{download}</span>
                     </div>
                 </div>
-
-                {/*<GalleryItemPopup photo={photo}/>*/}
+                {
+                    this.photo &&
+                    <GalleryItemPopup
+                        photo={photo}
+                        showModal={this.props.showModal(photo)}
+                    />
+                }
             </li>
         )
 

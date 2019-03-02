@@ -9,6 +9,13 @@ const masonryOptions = {
 
 class MainGallery extends Component {
 
+    state = {
+        photoList: [],
+        currentPage: 1,
+        query : 'photo',
+        photo: ""
+    }
+
     showModal(photo) {
         console.log('@@',photo)
         this.setState({
