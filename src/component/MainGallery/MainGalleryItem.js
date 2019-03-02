@@ -12,12 +12,14 @@ class MainGalleryItem extends Component {
 
     render() {
 
-        const photo = this.props.photo;
-        console.log(photo)
+        const {
+            photo,
+            showModal,
+        } = this.props;
 
         return (
 
-            <li className="MainGalleryItem" onClick={(photo)=>this.props.showModal(photo)}>
+            <li className="MainGalleryItem" onClick={() => showModal(photo)}>
                 <div className="inner">
                     <img src={photo.urls.regular} className="thumb"/>
                     <div className="desc">
@@ -46,13 +48,6 @@ class MainGalleryItem extends Component {
                         <span className="download">{download}</span>
                     </div>
                 </div>
-                {
-                    this.photo &&
-                    <GalleryItemPopup
-                        photo={photo}
-                        showModal={this.props.showModal(photo)}
-                    />
-                }
             </li>
         )
 

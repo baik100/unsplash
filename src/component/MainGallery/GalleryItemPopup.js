@@ -10,10 +10,14 @@ const download = <FontAwesomeIcon icon={faArrowDown} />
 class GalleryItemPopup extends Component {
     render() {
 
-        const photo = this.props.photo;
+        const {
+            photo,
+            closeModal,
+        }= this.props;
 
         return (
             <div className="GalleryItemPopup">
+                <div className="popup-screen" onClick={() => closeModal()}></div>
                 <div className="ly-inner">
                     <div className="head">
                         <div className="pop-desc">

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './MainGallery.scss'
 import Masonry from 'react-masonry-component';
 import MainGalleryItem from "./MainGalleryItem";
+import GalleryItemPopup from "./GalleryItemPopup";
 
 const masonryOptions = {
     transitionDuration: 0
@@ -13,16 +14,21 @@ class MainGallery extends Component {
         photoList: [],
         currentPage: 1,
         query : 'photo',
-        photo: ""
-    }
+        photo : undefined,
+    };
 
-    showModal(photo) {
-        console.log('@@',photo)
+    showModal = (photo) => {
         this.setState({
-            photo: photo
+            photo
         })
-
     }
+
+
+    closeModal = () => {
+        this.setState({
+            photo: undefined
+        })
+    };
 
 
     render() {
@@ -42,10 +48,10 @@ class MainGallery extends Component {
                     updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
                 >
                     {
-                        this.props.photoList.map(photo => {
+                        photoList.map((photo, index) => {
                             return (
-
                                 <MainGalleryItem
+                                    key={index}
                                     photo={photo}
                                     showModal={this.showModal}
                                 />
@@ -53,6 +59,14 @@ class MainGallery extends Component {
                         })
                     }
                 </Masonry>
+
+                {
+                    this.state.photo &&
+                    <GalleryItemPopup
+                        photo={this.state.photo}
+                        closeModal={this.closeModal}
+                    />
+                }
 
             </div>
         );
