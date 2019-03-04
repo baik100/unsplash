@@ -49,6 +49,7 @@ class MainGallery extends Component {
                 >
                     {
                         photoList.map((photo, index) => {
+                            console.log(photo);
                             return (
                                 <MainGalleryItem
                                     key={index}

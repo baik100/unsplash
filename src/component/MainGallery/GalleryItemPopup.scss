@@ -24,22 +24,120 @@
     background: rgba(0, 0, 0, 0.3);
     z-index: -1;
   }
+  .btn-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    cursor: pointer;
+  }
   .ly-inner {
+    margin-top: 30px;
     z-index: 100;
     width: 1200px;
-    height: 300px;
     background: #fff;
     padding: 15px 17px;
+    max-height: 90vh;
+    overflow-y: auto;
   }
-  .head {
+  .pop-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     .pop-desc {
+      .item-info {
+        display: flex;
+        align-items: center;
+        .user-img {
+          padding-right: 15px;
+          img {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+          }
+        }
+        .user-name {
+          font-size: 15px;
+          color: #111;
+          > span {
+            display: block;
+            &.last-name {
+              font-size: 11px;
+              color: #999;
+            }
+          }
+        }
+      }
 
     }
     .pop-info {
       display: flex;
+
+      .pop-collect {
+        display: flex;
+        align-items: center;
+
+        .i-favorite, .i-collect {
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+          height: 33px;
+          line-height: 33px;
+          background: rgba(255, 255, 255, 0.8);
+          border: 1px solid #ddd;
+          padding: 0 12px;
+          color: #6d6d6d;
+          font-size: 14px;
+          font-weight: 400;
+          text-transform: capitalize;
+          cursor: pointer;
+          @include transition(0.7);
+
+          &:hover {
+            border: 1px solid #111;
+            color: #111;
+          }
+
+          + div {
+            margin-left: 10px;
+          }
+
+          .heart {
+            color: #dc5e4e;
+            padding-right: 8px;
+          }
+
+          .plus {
+            padding-right: 8px;
+          }
+        }
+      }
     }
+      .pop-download {
+        margin-left: 8px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        height: 33px;
+        line-height: 33px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ddd;
+        padding: 0 50px;
+        color: #6d6d6d;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: capitalize;
+        cursor: pointer;
+        @include transition(0.7);
+        &:hover {
+          border: 1px solid #111;
+          color: #111;
+      }
+    }
+  }
+  .pop-body {
+    text-align: center;
+    padding: 40px;
+    cursor: zoom-in;
   }
 }
