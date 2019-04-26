@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import classnames from 'classnames';
 import './GalleryItemPopup.scss'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faHeart, faPlus, faArrowDown, faWindowClose} from '@fortawesome/free-solid-svg-icons'
+import {faHeart, faPlus, faWindowClose, faInfoCircle, faShare} from '@fortawesome/free-solid-svg-icons'
+import RelatedPhotos from "./RelatedPhotos";
+import FeaturedCollections from "./FeaturedCollections";
 
 class GalleryItemPopup extends Component {
 
@@ -71,16 +73,39 @@ class GalleryItemPopup extends Component {
                     </div>
                     <div className="pop-body">
                         <div className="user-photo">
-                            <div className={classnames("thumbnail", {zoomIn: this.state.zoomIn} )}
+                            <div className={classnames("thumbnail", {zoomIn: this.state.zoomIn})}
                                  onClick={() => this.toggleZoom()}
                             >
-                                <img src={this.state.zoomIn ? photo.urls.regular : photo.urls.small} alt=""/>
+                                <img src={this.state.zoomIn ? photo.urls.full : photo.urls.small} alt=""/>
                             </div>
                         </div>
                         <div className="pop-share">
                             <div className="i-share">
-
+                                <FontAwesomeIcon icon={faShare}/> Share
                             </div>
+
+                            <div className="i-info">
+                                <FontAwesomeIcon icon={faInfoCircle}/> Info
+                            </div>
+                        </div>
+                        <div className="RelatedPhotos">
+                            <RelatedPhotos
+                                photo={this.state.photo}
+                            />
+                        </div>
+                        <div className="FeatuerdCollections">
+                            <FeaturedCollections
+
+                            />
+                        </div>
+                        <div className="RelatedTags">
+                            <div className="title-area">Related tags</div>
+                            <span className="tag">tag1</span>
+                            <span className="tag">tag1</span>
+                            <span className="tag">tag1</span>
+                            <span className="tag">tag1</span>
+                            <span className="tag">tag1</span>
+                            <span className="tag">tag1</span>
                         </div>
                     </div>
                 </div>
