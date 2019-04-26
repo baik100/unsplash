@@ -3,9 +3,6 @@
 //GalleryItemPopup
 
 .GalleryItemPopup {
-}
-
-.GalleryItemPopup {
   position: fixed;
   top: 0;
   left: 0;
@@ -36,14 +33,17 @@
     z-index: 100;
     width: 1200px;
     background: #fff;
-    padding: 15px 17px;
     max-height: 90vh;
     overflow-y: auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
   }
   .pop-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 13px 18px;
     .pop-desc {
       .item-info {
         display: flex;
@@ -84,9 +84,9 @@
           height: 33px;
           line-height: 33px;
           background: rgba(255, 255, 255, 0.8);
-          border: 1px solid #ddd;
+          border: 1px solid #999;
           padding: 0 12px;
-          color: #6d6d6d;
+          color: #999;
           font-size: 14px;
           font-weight: 400;
           text-transform: capitalize;
@@ -113,31 +113,72 @@
         }
       }
     }
-      .pop-download {
-        margin-left: 8px;
+    .pop-download {
+      margin-left: 8px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      height: 33px;
+      line-height: 33px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #999;
+      padding: 0 50px;
+      color: #999;
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: capitalize;
+      cursor: pointer;
+      @include transition(0.7);
+      &:hover {
+        border: 1px solid #111;
+        color: #111;
+      }
+    }
+  }
+  .pop-body {
+    text-align: center;
+    cursor: zoom-in;
+    .user-photo {
+      padding: 0;
+    }
+    .pop-share {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 13px 18px;
+      .i-share, .i-info {
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
         height: 33px;
         line-height: 33px;
         background: rgba(255, 255, 255, 0.8);
-        border: 1px solid #ddd;
-        padding: 0 50px;
-        color: #6d6d6d;
+        border: 1px solid #999;
+        padding: 0 12px;
+        color: #999;
         font-size: 14px;
         font-weight: 400;
         text-transform: capitalize;
         cursor: pointer;
         @include transition(0.7);
+
         &:hover {
           border: 1px solid #111;
           color: #111;
+        }
+        &.i-info {
+          margin-left: 8px;
+        }
       }
     }
-  }
-  .pop-body {
-    text-align: center;
-    padding: 40px;
-    cursor: zoom-in;
+    .RelatedTags {
+      text-align: left;
+      padding: 60px 12px 40px;
+      .title-area {
+        font-size: 18px;
+        color: #111;
+        margin-bottom: 12px;
+      }
+    }
   }
 }

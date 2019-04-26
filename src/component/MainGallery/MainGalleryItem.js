@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './MainGalleryItem.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faHeart, faPlus, faArrowDown} from '@fortawesome/free-solid-svg-icons'
-import GalleryItemPopup from "./GalleryItemPopup";
 
 const heart = <FontAwesomeIcon icon={faHeart} />
 const plus = <FontAwesomeIcon icon={faPlus} />
