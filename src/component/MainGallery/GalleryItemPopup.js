@@ -24,6 +24,8 @@ class GalleryItemPopup extends Component {
             closeModal,
         } = this.props;
 
+        console.log('@@photo',photo)
+
         return (
             <div className="GalleryItemPopup">
                 <div className="popup-screen" onClick={() => closeModal()}></div>
@@ -90,22 +92,14 @@ class GalleryItemPopup extends Component {
                         </div>
                         <div className="RelatedPhotos">
                             <RelatedPhotos
-                                photo={this.state.photo}
                             />
                         </div>
                         <div className="FeatuerdCollections">
                             <FeaturedCollections
-
                             />
                         </div>
                         <div className="RelatedTags">
                             <div className="title-area">Related tags</div>
-                            <span className="tag">tag1</span>
-                            <span className="tag">tag1</span>
-                            <span className="tag">tag1</span>
-                            <span className="tag">tag1</span>
-                            <span className="tag">tag1</span>
-                            <span className="tag">tag1</span>
                         </div>
                     </div>
                 </div>
