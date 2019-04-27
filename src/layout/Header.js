@@ -5,6 +5,7 @@ import UserImg from '../img/extra-large.jpg'
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch, faEllipsisH, faBell} from '@fortawesome/free-solid-svg-icons'
+import * as classnames from "classnames";
 
 const search = <FontAwesomeIcon icon={faSearch}/>
 const ellipsis = <FontAwesomeIcon icon={faEllipsisH}/>
@@ -28,7 +29,16 @@ const navTags = [
 ];
 
 class Header extends Component {
+    state = {
+        pathname: false
+    };
 
+    componentDidMount() {
+        const pathname = window.location.pathname;
+        this.setState({
+            pathname
+        })
+    }
 
     render() {
         return (
@@ -51,9 +61,8 @@ class Header extends Component {
                                 </form>
                             </div>
                             <div className="nav-menu">
-                                <Link to='/main/main'>Home</Link>
-                                <Link to='/main/main'>Collections</Link>
-                                <Link to='/main/main'>Explore</Link>
+                                <Link to='/main/main'className={ classnames({isActive: this.state.pathname === "/main/main"})}>Home</Link>
+                                <Link to='/component/collections/collections' className={ classnames({isActive: this.state.pathname === "/component/collections/collections"}) }>Collections</Link>
                                 <div className="ellipsis">{ellipsis}</div>
                                 <div className="submit">Submit photo</div>
                                 <div className="alarm">{bell}</div>

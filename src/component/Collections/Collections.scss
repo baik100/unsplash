@@ -1,0 +1,68 @@
+//collections
+.Collections {
+    .Collections-head {
+        padding: 60px 12px 72px;
+        .Collections-title {
+            font-size: 46px;
+            color: #111;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        p {
+            font-size: 18px;
+            span {
+                display: block;
+                color: #999;
+                text-decoration: underline;
+            }
+        }
+    }
+    .Collections-body {
+        display: flex;
+        .CollectionsItem {
+            width: 33.33%;
+            padding: 0 12px 48px;
+            .CollectionsThumbnail {
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                overflow: hidden;
+                ul {
+                    display: flex;
+                    height: 305px;
+
+                    .thumbnail {
+                        background: #f1f1f1;
+                        &:first-child {
+                            width: 66.66%;
+                            padding-right: 2px;
+                            img {
+
+                            }
+                        }
+                        &:nth-child(2) {
+                            width: 33.33%;
+                            img {
+                                display: block;
+                                height: 50%;
+                                + img {
+                                    padding-top: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .CollectionsSubject {
+                font-size: 18px;
+                font-weight: bold;
+                margin: 16px 0 3px;
+            }
+            .CollectionsDesc {
+                font-size: 14px;
+                color: #999;
+                margin-bottom: 13px;
+            }
+        }
+    }
+}
